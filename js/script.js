@@ -42,10 +42,16 @@ function UpdateImg(img) {
 	modalYear.innerHTML = galery[img].year;
 
     if(imgchange == 0){
-    	document.querySelector('.prev').style.display = 'none';
+        document.querySelector('.prev').style.display = 'none';
+    }
+    if (imgchange > 0) {
+        document.querySelector('.prev').style.display = 'block';
     }
     if(imgchange == 23){
-    	document.querySelector('.next').style.display = 'none';
+        document.querySelector('.next').style.display = 'none';
+    }
+    if (imgchange < 23) {
+        document.querySelector('.next').style.display = 'block';
     }
 }
 function goImg(img){
