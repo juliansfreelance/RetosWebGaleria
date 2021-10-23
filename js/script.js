@@ -6,10 +6,15 @@ const galeryYear = document.querySelector('.galeryYear');
 const modalImg = document.querySelector('.modalImg');
 const modalTitulo = document.querySelector('.modalTitulo');
 const modalYear = document.querySelector('.modalYear');
+const indicator = document.querySelector('.indicator');
 
 let imgchange = 0;
 
 UpdateImg(imgchange);
+
+for (var i = 0; i <= galery.length - 1; i++) {
+    indicator.innerHTML += "<div class='poinImg' onclick='goImg("+i+")' ><div>"
+}
 
 document.querySelector('.prev').addEventListener('click', ()=>{
     if (imgchange > 0) {
@@ -43,9 +48,15 @@ function UpdateImg(img) {
     	document.querySelector('.next').style.display = 'none';
     }
 }
+function goImg(img){
+    imgchange = img;
+    UpdateImg(img);
+}
 document.querySelector('.galeryImg').addEventListener('click', ()=>{
     document.querySelector('.pop-up').style.display = 'block';
 });
 document.querySelector('.close').addEventListener('click', ()=>{
     document.querySelector('.pop-up').style.display = 'none';
 });
+
+
